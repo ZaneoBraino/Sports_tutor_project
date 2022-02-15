@@ -1,6 +1,6 @@
 import React from "react";
 
-function coaches(){
+function Coaches(){
     return (
         <div class="card">
   <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGVhZHNob3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" class="card-img-top" class="card-img-top" alt="Fissure in Sandstone"/>
