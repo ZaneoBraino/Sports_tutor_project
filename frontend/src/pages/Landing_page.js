@@ -3,9 +3,9 @@ import React from "react";
 function Landing_page() {
   return (
     <div class="container">
-      <img class="cover" src="img/cover.jpg"></img>
+      <img class="cover" src="./frontend/src/assets/Frontpageimagetest"></img>
       <div class="coverText">
-        <h1></h1>
+        <h1>Test</h1>
       </div>
     </div>
   );
