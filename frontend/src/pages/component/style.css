@@ -50,7 +50,7 @@
 .form-group input:focus {
   border-bottom: 3px solid coral;
 }
-.btn {
+/* .btn {
   padding: 10px 20px;
   cursor: pointer;
   width: 100%;
@@ -65,4 +65,4 @@
 .btn-primary {
   background-color: coral;
   color: #fff;
-}
+} */

@@ -24,12 +24,12 @@ function Header() {
               Home
             </a>
             <a class="nav-link" href="#">
-              Community
+              Coaches
             </a>
             <a class="nav-link" href="#">
               Pricing
             </a>
-            <a class="nav-link">About Us</a>
+            <a class="nav-link" href="#">About Us</a>
           </div>
         </div>
       </div>
