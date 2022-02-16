@@ -1,19 +1,40 @@
 import React from "react";
 import "./SignUp.css";
-import "./component./style.css";
+import "./component/style.css";
 
 function CoachSignUp() {
   return (
     <div className="register-screen">
       <form className="register-screen_form">
-        <h3 className="register-screen_title">Sign Up</h3>
+        <h3 className="register-screen_title">Coach SignUp</h3>
+
+        <div className="form-group">
+          <label htmlFor="name">First Name</label>
+          <input
+            type="text"
+            required
+            id="firstname"
+            placeholder="Enter your first name"
+          ></input>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="name">Last Name</label>
+          <input
+            type="text"
+            required
+            id="lastname"
+            placeholder="Enter your lastname"
+          ></input>
+        </div>
+
         <div className="form-group">
           <label htmlFor="name">User Name</label>
           <input
             type="text"
             required
             id="name"
-            placeholder="Enter username"
+            placeholder="Choose a username"
           ></input>
         </div>
 
