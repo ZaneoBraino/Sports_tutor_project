@@ -12,9 +12,76 @@ code {
     monospace;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
 footer {
   bottom: 0;
   left: 0;
   position: fixed;
   right: 0;
+}
+
+.cover {
+  width: 100%;
+
+  object-fit: fill;
+}
+
+.coverText {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+}
+
+.signup_page_buttons {
+  position: absolute;
+  left: 50%;
+}
+
+.signup_page_buttons {
+  width: 100px;
+}
+.signup_page_buttons {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup_page_buttons {
+  background-color: #519cc7;
+  border: none;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.login_page_buttons {
+  position: absolute;
+  right: 50%;
+}
+
+.login_page_buttons {
+  width: 100px;
+}
+.login_page_buttons {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.login_page_buttons {
+  background-color: #51c774;
+  border: none;
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  border-radius: 4px;
 }
