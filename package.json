@@ -1,21 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.2",
-    "if-env": "^1.0.4",
-    "nodemon": "^2.0.15"
-  }
-=======
 	"name": "mern",
 	"version": "1.0.0",
 	"description": "",
@@ -41,5 +24,4 @@
 		"concurrently": "^7.0.0",
 		"nodemon": "^2.0.15"
 	}
->>>>>>> main
 }
