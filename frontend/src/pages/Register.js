@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./register.css";
 import backgroundOne from "../assets/tennis-photo.jpg";
+import { Link } from "react-router-dom";
 
 //register function
 function Register() {
@@ -39,7 +40,7 @@ function Register() {
 						<div className="row d-flex justify-content-center align-items-center h-100">
 							<div className="col-12 col-md-9 col-lg-7 col-xl-6">
 								<div
-									className="card"
+									className="card-register"
 									style={{
 										borderRadius: 15,
 										marginBottom: "6rem",
@@ -136,7 +137,9 @@ function Register() {
 													href="#!"
 													className="fw-bold text-body"
 												>
-													<u>Login here</u>
+													<Link to="/login">
+														<u>Login here</u>
+													</Link>
 												</a>
 											</p>
 										</form>

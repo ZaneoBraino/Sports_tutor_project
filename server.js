@@ -14,7 +14,7 @@ app.use(
 );
 app.use(bodyParser.json());
 // send to build
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "frontend/build")));
 // DB Config
 const db = require("./config/keys").connectionString;
 
