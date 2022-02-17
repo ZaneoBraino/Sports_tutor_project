@@ -1,7 +1,7 @@
 import React from "react";
-import "./SignUp.css";
 import "./component/style.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 function CoachSignUp() {
   return (
     <div className="register-screen">
@@ -51,7 +51,7 @@ function CoachSignUp() {
         <div className="form-group">
           <label htmlFor="name">Password</label>
           <input
-            type="text"
+            type="password"
             required
             id="password"
             placeholder="Enter Password"
@@ -61,7 +61,7 @@ function CoachSignUp() {
         <div className="form-group">
           <label htmlFor="name">Confirm Password</label>
           <input
-            type="text"
+            type="fepassword"
             required
             id="confirm password"
             placeholder="Enter confirm password"
@@ -69,7 +69,7 @@ function CoachSignUp() {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          <Link to="./pages/component/new.html">Sign Up</Link>
+          <Link to="/linked">Sign Up</Link>
         </button>
       </form>
     </div>
