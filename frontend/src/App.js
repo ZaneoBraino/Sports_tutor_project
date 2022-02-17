@@ -7,9 +7,10 @@ import CoachSignUp from "./pages/SignUp";
 import About from "./pages/About";
 import Coaches from "./pages/Coaches";
 import Landing_page from "./pages/Landing_page";
+import Deletion from "./pages/Deletion";
 
 function App() {
- return (
+  return (
     <div>
       <Router>
         <Header />
@@ -17,9 +18,10 @@ function App() {
           <Route path={"/"} element={<Landing_page />}></Route>
           <Route path={"/SignUp"} element={<CoachSignUp />}></Route>
           <Route path={"/about"} element={<About />}></Route>
-          <Route path={"/coaches"} element={<Coaches />}></Route>          
-					<Route path={"/Register"} element={<Register />}></Route>
-					<Route path={"/Login"} element={<Login />}></Route>
+          <Route path={"/coaches"} element={<Coaches />}></Route>
+          <Route path={"/Register"} element={<Register />}></Route>
+          <Route path={"/Login"} element={<Login />}></Route>
+          <Route path={"/Deletion"} element={<Deletion />}></Route>
         </Routes>
         <Footer />
       </Router>

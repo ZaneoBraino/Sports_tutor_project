@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -20,16 +21,29 @@ function Header() {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
-            <a class="nav-link" href="#">
-              Community
-            </a>
-            <a class="nav-link" href="#">
-              Pricing
-            </a>
-            <a class="nav-link">About Us</a>
+            <Link to="/">
+              <a class="nav-link active" aria-current="page" href="#">
+                Home
+              </a>
+            </Link>
+            <Link to="/">
+              <a class="nav-link" href="#">
+                Training Tips
+              </a>
+            </Link>
+            <Link to="/coaches">
+              <a class="nav-link" href="#">
+                Coaches
+              </a>
+            </Link>
+            <Link to="/">
+              <a class="nav-link" href="#">
+                Pricing
+              </a>
+            </Link>
+            <Link to="/about">
+              <a class="nav-link">About Us</a>
+            </Link>
           </div>
         </div>
       </div>
