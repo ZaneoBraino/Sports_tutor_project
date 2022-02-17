@@ -7,7 +7,7 @@ function Footer() {
         <section class="mb-4">
           <a
             class="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://facebook.com"
             role="button"
           >
             <i class="fa fa-facebook-f"></i>
@@ -15,7 +15,7 @@ function Footer() {
 
           <a
             class="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://twitter.com"
             role="button"
           >
             <i class="fa fa-twitter"></i>
@@ -23,7 +23,7 @@ function Footer() {
 
           <a
             class="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://google.com"
             role="button"
           >
             <i class="fa fa-google"></i>
@@ -31,7 +31,7 @@ function Footer() {
 
           <a
             class="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://instagram.com"
             role="button"
           >
             <i class="fa fa-instagram"></i>
@@ -39,7 +39,7 @@ function Footer() {
 
           <a
             class="btn btn-outline-light btn-floating m-1"
-            href="#!"
+            href="https://github.com/ZaneoBraino/Sports_tutor_project"
             role="button"
           >
             <i class="fa fa-github"></i>
