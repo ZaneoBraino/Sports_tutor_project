@@ -1,33 +1,54 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import axios from "axios";
 import "./register.css";
 import backgroundOne from "../assets/tennis-photo.jpg";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
+import "react-toastify/dist/ReactToastify.css";
 
 //register function
 function Register() {
-	const [user, setUser] = useState({
+	let navigate = useNavigate();
+	const [newUser, setNewUser] = useState({
 		name: "",
 		email: "",
 		password: "",
+		password2: "",
+		errors: {},
 	});
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setUser({
-			...user, //spread operator
+		setNewUser({
+			...newUser,
 			[name]: value,
 		});
 	};
-	const { name, email, password } = user;
-	if (name && email && password) {
-		axios
-			.post("http://localhost:300/Register", user)
-			.then((res) => console.log(res));
-	} else {
-		// alert("invalid input");
-	}
+	const onSubmit = (e) => {
+		e.preventDefault();
+		axios.post("/api/users/register", newUser).then(RegisterSuccess);
+	};
+
+	const RegisterSuccess = (res) => {
+		if (res.status === 200) {
+			toast.success("Welcome to CoachedUp!!!", {
+				position: "top-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
+			setTimeout(navigate("/"), 5000);
+		}
+	};
+
 	return (
 		<>
+			<ToastContainer />
 			<section
 				className="vh-100 bg-image"
 				style={{
@@ -54,12 +75,15 @@ function Register() {
 											<div className="form-outline mb-4">
 												<input
 													type="text"
-													id="form3Example1cg"
+													id="user-name"
 													className="form-control form-control-lg"
+													name="name"
+													value={newUser.name}
+													onChange={handleChange}
 												/>
 												<label
 													className="form-label"
-													htmlFor="form3Example1cg"
+													htmlFor="name"
 												>
 													Your Name
 												</label>
@@ -67,12 +91,15 @@ function Register() {
 											<div className="form-outline mb-4">
 												<input
 													type="email"
-													id="form3Example3cg"
+													id="user-email"
 													className="form-control form-control-lg"
+													name="email"
+													value={newUser.email}
+													onChange={handleChange}
 												/>
 												<label
 													className="form-label"
-													htmlFor="form3Example3cg"
+													htmlFor="email"
 												>
 													Your Email
 												</label>
@@ -80,12 +107,15 @@ function Register() {
 											<div className="form-outline mb-4">
 												<input
 													type="password"
-													id="form3Example4cg"
+													id="user-password"
 													className="form-control form-control-lg"
+													name="password"
+													value={newUser.password}
+													onChange={handleChange}
 												/>
 												<label
 													className="form-label"
-													htmlFor="form3Example4cg"
+													htmlFor="password"
 												>
 													Password
 												</label>
@@ -93,12 +123,15 @@ function Register() {
 											<div className="form-outline mb-4">
 												<input
 													type="password"
-													id="form3Example4cdg"
+													id="user-password2"
 													className="form-control form-control-lg"
+													name="password2"
+													value={newUser.password2}
+													onChange={handleChange}
 												/>
 												<label
 													className="form-label"
-													htmlFor="form3Example4cdg"
+													htmlFor="password2"
 												>
 													Repeat your password
 												</label>
@@ -127,6 +160,8 @@ function Register() {
 												<button
 													type="button"
 													className="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
+													onChange={handleChange}
+													onClick={onSubmit}
 												>
 													Register
 												</button>
