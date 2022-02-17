@@ -7,6 +7,7 @@ import CoachSignUp from "./pages/SignUp";
 import About from "./pages/About";
 import Coaches from "./pages/Coaches";
 import Landing_page from "./pages/Landing_page";
+import Deletion from "./pages/Deletion";
 
 import Linked from "./pages/Linked";
 
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/linked"} element={<Linked />}></Route>
           <Route path={"/Register"} element={<Register />}></Route>
           <Route path={"/Login"} element={<Login />}></Route>
+          <Route path={"/Deletion"} element={<Deletion />}></Route>
         </Routes>
         <Footer />
       </Router>
