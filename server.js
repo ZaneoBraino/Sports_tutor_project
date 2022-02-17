@@ -34,6 +34,6 @@ mongoose
 	.then(() => console.log("MongoDB successfully connected"))
 	.catch((err) => console.log(err));
 
-const port = process.env.PORT || 3000; // Heroku will need the PORT environment variable
+const port = process.env.PORT || 3001; // Heroku will need the PORT environment variable
 
 app.listen(port, () => console.log(`App is live on port ${port}!`));

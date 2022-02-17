@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import loginBackground from "../assets/soccer-field-photo.jpg";
+import jwt_decode from "jwt-decode";
 
 const Login = ({ setLoginUser }) => {
 	const navigate = useNavigate();
@@ -17,15 +18,17 @@ const Login = ({ setLoginUser }) => {
 		});
 	};
 
-	const login = () => {
+	const login = (e) => {
+		e.preventDefault();
 		console.log(user);
-		axios
-			.post("http://localhost:3000/api/users/login", user)
-			.then((res) => {
-				alert(res.data.message);
-				setLoginUser(res.data.user);
-				navigate("/");
-			});
+		axios.post("/api/users/login", user).then((res) => {
+			console.log(res.data.token);
+			let decode = jwt_decode.apply(res.data.token);
+			console.log(decode);
+			//alert(res.data.message);
+			//setLoginUser(res.data.user);
+			navigate("/");
+		});
 	};
 	return (
 		<>
@@ -117,7 +120,6 @@ const Login = ({ setLoginUser }) => {
 					</div>
 				</div>
 			</div>
-			{/* Background image */}
 		</>
 	);
 };
