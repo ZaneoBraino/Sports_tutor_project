@@ -34,3 +34,17 @@
 		rgba(143, 211, 244, 1)
 	);
 }
+.card-register {
+	margin: 5rem;
+	position: relative;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #32383e;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	border-radius: 0.25rem;
+}
