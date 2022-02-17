@@ -14,7 +14,7 @@ app.use(
 );
 app.use(bodyParser.json());
 // send to build
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static(path.join(__dirname, "frontend/build")));
 // DB Config
 const db = require("./config/keys").connectionString;
 
@@ -23,6 +23,11 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+
+app.get("/*", (req, res) => {
+	res.sendFile(path.join(__dirname, "frontend/build/index.html"));
+});
+
 // Connect to MongoDB
 mongoose
 	.connect(db, { useNewUrlParser: true })
