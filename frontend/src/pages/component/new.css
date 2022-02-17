@@ -1,0 +1,29 @@
+body {
+  background: url("https://images.unsplash.com/photo-1598136490941-30d885318abd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80");
+  opacity: 0.8;
+  background-size: cover;
+}
+form {
+  padding: 10px;
+  font-family: arial;
+  border: 1px dotted whitesmoke;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  align-self: auto;
+  text-align: justify;
+}
+
+h4 {
+  text-align: center;
+  background: blue;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: fit-content;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}

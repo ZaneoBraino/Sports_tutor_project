@@ -69,7 +69,7 @@ function CoachSignUp() {
         </div>
 
         <button type="submit" className="btn btn-primary">
-          Sign Up
+          <Link to="./pages/component/new.html">Sign Up</Link>
         </button>
       </form>
     </div>
