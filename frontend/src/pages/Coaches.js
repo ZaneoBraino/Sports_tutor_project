@@ -1,46 +1,45 @@
 import React from "react";
+import { coachList } from "./component/coachList";
 
-function coaches(){
-    return (
-        <div class="card">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img
-        src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
-        alt="Trendy Pants and Shoes"
-        class="img-fluid rounded-start"
-      />
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Coach Clay</h5>
-        <p class="card-text">
-          Located: Daytona Beach, FL
-        </p>
-        <p class="card-text">
-          <small class="text-muted">A little about me.....</small>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-//         <div class="card">
-//   <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-//   <div class="card-body">
-//     <h5 class="card-title">Coach Clay</h5>
-//     <p class="card-text">Location: Daytona, FL</p>
-//     <a href="#!" class="btn btn-primary">Contact</a>
-//   </div>
-//   <div class="card">
-//   <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
-//   <div class="card-body">
-//     <h5 class="card-title">Coach Meri</h5>
-//     <p class="card-text">Location: Unknown</p>
-//     <a href="#!" class="btn btn-primary">Contact</a>
-//   </div>
-// </div>
-// </div>
 
+function Coaches() {      
+    let cardsArray = coachList;
+    const mappedCard = cardsArray.map(cardMapper);
+    function cardMapper (aCoach) {
+        let results = (            
+            <div className="col row-col-xl-4">
+                <div className="card">
+                    <div className="card h-100">
+                        <img src={aCoach.img} className="card-img-top" alt=""/>
+                    <div className="card-body">
+                        <h5 className="card-title">Coach {aCoach.name}</h5>
+                        <p className="card-text">{aCoach.Location}
+                        <br></br>
+                        {aCoach.Sports}
+                        </p>
+                        <div>
+                        <a class="btn btn-outline-light btn-floating m-1" href={aCoach.Twitter} role="button" >
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-floating m-1" href={aCoach.Instagram} role="button" >
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div> 
     )
-}
-export default coaches;
+    return results;
+    };
+  
+    return (
+        <div class="container-fluid justify-center">
+            <h1>Our Amazing Coaches</h1>
+            <div class="row">
+                {mappedCard}
+            </div>
+        </div>
+    );
+  };
+  export default Coaches;
