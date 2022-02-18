@@ -1,9 +1,29 @@
-import React from "react";
-import { coachList } from "./coachList";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Coaches() {
-	let cardsArray = coachList;
-	const mappedCard = cardsArray.map(cardMapper);
+	let [coaches, setCoaches] = useState([]);
+	let [data, setData] = useState([]);
+
+	useEffect(
+		function getCoaches() {
+			axios({
+				method: "get",
+				url: "/api/coaches/getCoaches",
+			})
+				.then((response) => {
+					console.log(response);
+					setData(response.data);
+				})
+				.catch((response) => console.log(response));
+		},
+		[coaches]
+	);
+
+	console.log(data);
+
+	const mappedCard = data.map(cardMapper);
 	function cardMapper(aCoach) {
 		let results = (
 			<div className="col row-col-xl-4">
@@ -13,21 +33,21 @@ function Coaches() {
 						<div className="card-body">
 							<h5 className="card-title">Coach {aCoach.name}</h5>
 							<p className="card-text">
-								{aCoach.Location}
+								{aCoach.location}
 								<br></br>
-								{aCoach.Sports}
+								{aCoach.sports}
 							</p>
 							<div>
 								<a
 									class="btn btn-outline-light btn-floating m-1"
-									href={aCoach.Twitter}
+									href={aCoach.twitter}
 									role="button"
 								>
 									<i class="fa fa-twitter"></i>
 								</a>
 								<a
 									class="btn btn-outline-light btn-floating m-1"
-									href={aCoach.Instagram}
+									href={aCoach.instagram}
 									role="button"
 								>
 									<i class="fa fa-instagram"></i>
@@ -45,7 +65,12 @@ function Coaches() {
 		<div class="container-fluid justify-center">
 			<h1>Our Amazing Coaches</h1>
 			<div class="row">{mappedCard}</div>
+			<div className="col">
+				<h2 className="mb-10">Want to delete your card?</h2>
+				<Link to="/deletion">Go</Link>
+			</div>
 		</div>
 	);
 }
+
 export default Coaches;
