@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import loginBackground from "../assets/soccer-field-photo.jpg";
-import jwt_decode from "jwt-decode";
+import loginBackground from "../../assets/soccer-field-photo.jpg";
 
-const Login = ({ setLoginUser }) => {
+const Login = () => {
 	const navigate = useNavigate();
 	const [user, setUser] = useState({
 		email: "",
@@ -13,7 +12,7 @@ const Login = ({ setLoginUser }) => {
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setUser({
-			...user, //spread operator
+			...user,
 			[name]: value,
 		});
 	};
@@ -22,11 +21,7 @@ const Login = ({ setLoginUser }) => {
 		e.preventDefault();
 		console.log(user);
 		axios.post("/api/users/login", user).then((res) => {
-			console.log(res.data.token);
-			let decode = jwt_decode.apply(res.data.token);
-			console.log(decode);
-			//alert(res.data.message);
-			//setLoginUser(res.data.user);
+			//add a setTimeout
 			navigate("/");
 		});
 	};

@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import axios from "axios";
-import "./register.css";
-import backgroundOne from "../assets/tennis-photo.jpg";
+import "../css/register.css";
+import backgroundOne from "../../assets/tennis-photo.jpg";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ function Register() {
 
 	const RegisterSuccess = (res) => {
 		if (res.status === 200) {
-			toast.success("Welcome to CoachedUp!!!", {
+			toast.success("Welcome to Coached Up !!!", {
 				position: "top-center",
 				autoClose: 5000,
 				hideProgressBar: false,
@@ -42,7 +42,8 @@ function Register() {
 				draggable: true,
 				progress: undefined,
 			});
-			setTimeout(navigate("/"), 5000);
+			setTimeout(navigate("/"), 7000);
+			// troubleshoot this
 		}
 	};
 

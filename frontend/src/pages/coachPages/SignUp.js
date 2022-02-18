@@ -1,6 +1,6 @@
 import React from "react";
-import "./component/style.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "../css/style.css";
+
 function CoachSignUp() {
 	return (
 		<div className="register-screen">
@@ -73,7 +73,6 @@ function CoachSignUp() {
 			</form>
 		</div>
 	);
-
 }
 
 export default CoachSignUp;
