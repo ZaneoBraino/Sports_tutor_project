@@ -3,11 +3,13 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const bodyParser = require("body-parser");
 // Load input validation
 const validateRegisterInput = require("../../validation/coachRegister");
 const validateLoginInput = require("../../validation/coachLogin");
 // Load Coaches model
 const User = require("../../models/Coaches");
+router.use(bodyParser.json());
 
 // @route POST api/users/register
 // @desc Register user
@@ -123,10 +125,11 @@ router.delete("/delete", (req, res) => {
 	});
 });
 
-// router.get("/getCoaches", (req, res) => {
-// 	let results = User.find();
-// 	console.log(results);
-// 	res.json({ results });
-// });
+router.get("/getCoaches", (req, res) => {
+	User.find().then((response) => {
+		console.log(response);
+		return res.status(200).json(response);
+	});
+});
 
 module.exports = router;

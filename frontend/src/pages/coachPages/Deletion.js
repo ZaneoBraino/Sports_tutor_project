@@ -3,63 +3,63 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Deletion = () => {
-  const navigate = useNavigate();
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({
-      ...user, //spread operator
-      [name]: value,
-    });
-  };
+	const navigate = useNavigate();
+	const [user, setUser] = useState({
+		email: "",
+		password: "",
+	});
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setUser({
+			...user, //spread operator
+			[name]: value,
+		});
+	};
 
-  const deleteUser = () => {
-    console.log(user);
-    axios.delete("http://localhost:3000/api/users/delete", user);
+	const deleteUser = () => {
+		console.log(user);
+		axios.delete("http://localhost:3000/api/coaches/delete", user);
 
-    alert("Your information has been ");
+		alert("Your information has been deleted");
 
-    navigate("/");
-  };
+		navigate("/coaches");
+	};
 
-  return (
-    <center>
-      <form>
-        <div class="deleteUser">
-          <div class="hide-md-lg">
-            <p>We're sorry to see you go.</p>
-          </div>
+	return (
+		<center>
+			<form>
+				<div class="deleteUser">
+					<div class="hide-md-lg">
+						<p>We're sorry to see you go.</p>
+					</div>
 
-          <input
-            type="text"
-            name="Email"
-            placeholder="Email"
-            onChange={handleChange}
-            value={user.email}
-            required
-          ></input>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={handleChange}
-            required
-          ></input>
-          <br></br>
-          <input
-            type="submit"
-            value="Delete"
-            class="deleteButton"
-            onClick={deleteUser}
-          ></input>
-        </div>
-      </form>
-    </center>
-  );
+					<input
+						type="text"
+						name="email"
+						placeholder="Email"
+						onChange={handleChange}
+						value={user.email}
+						required
+					></input>
+					<input
+						type="password"
+						name="password"
+						placeholder="Password"
+						value={user.password}
+						onChange={handleChange}
+						required
+					></input>
+					<br></br>
+					<input
+						type="submit"
+						value="Delete"
+						class="deleteButton"
+						onClick={deleteUser}
+					></input>
+				</div>
+			</form>
+		</center>
+	);
 };
 
 export default Deletion;

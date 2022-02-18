@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import loginBackground from "../../assets/soccer-field-photo.jpg";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -21,12 +24,21 @@ const Login = () => {
 		e.preventDefault();
 		console.log(user);
 		axios.post("/api/users/login", user).then((res) => {
-			//add a setTimeout
+			toast.success("Welcome to Coached Up !!!", {
+				position: "top-center",
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				draggable: true,
+				progress: undefined,
+			});
 			navigate("/");
 		});
 	};
 	return (
 		<>
+			<ToastContainer></ToastContainer>
 			<style
 				dangerouslySetInnerHTML={{
 					__html: ` #intro { background-image: url(${loginBackground});height: 100vh;     }      /* Height for devices larger than 576px */      @media (min-width: 992px) {       #intro {          margin-top: -58.59px;       }      }      .navbar .nav-link {        color: #fff !important;      }    `,
