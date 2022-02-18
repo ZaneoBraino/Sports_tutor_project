@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const passport = require("passport");
 const users = require("./routes/api/users");
+const coaches = require("./routes/api/coaches");
 
 const app = express();
 // Bodyparser middleware
@@ -23,6 +24,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
+app.use("/api/coaches", coaches);
 
 app.get("/*", (req, res) => {
 	res.sendFile(path.join(__dirname, "frontend/build/index.html"));
